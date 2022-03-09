@@ -31,7 +31,7 @@ class MyDocument extends Document {
             type="image/png"
             sizes="32x32"
             href="/assets/favicon-32x32.png"
-          ></link>        
+          ></link>
         </Head>
         <body>
           <Main />
