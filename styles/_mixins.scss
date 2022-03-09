@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use 'sass:math';
+
+@function rem($px) {
+  $html-font-size: 16;
+  @return #{math.div($px, $html-font-size)}rem;
+}
+
+$breakpoints: (
+  mobile: rem(350),
+  tablet: rem(720),
+  laptop: rem(1200),
+  desktop: rem(1440),
+);
+
+@mixin media($size) {
+  $breakpoint: map.get($breakpoints, $size);
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+//colors
+$green: #54e6af;
+$blueish-grey: #2c344b;
+$dark-blueish-grey: #121725;
+$white: #ffffff;
+$light-blueish-grey: #5a668a;
+$light-blue: #c2cbe5;
+$red: #fb3e3e;
