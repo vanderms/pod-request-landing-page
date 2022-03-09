@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import SectionHero from '../components/sections/section-hero';
 
 const Home: NextPage = () => {
   return (
@@ -7,7 +8,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Frontend Mentor | Pod request access landing page</title>
       </Head>
-      <main>Is it working?</main>
+      <SectionHero />
     </>
   );
 };

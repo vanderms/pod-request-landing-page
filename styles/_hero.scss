@@ -1,2 +1,89 @@
 @use './mixins' as *;
 
+.root-section-hero {
+
+  .bg-image{
+    background-image: url(/assets/mobile/image-host.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    inset: 0 0 0 0;
+    z-index: -1;
+    opacity: 0.1;  
+  }
+
+  .row-logo {
+    margin-top: rem(62);
+    display: flex;
+    justify-content: center;
+
+    .logo-link {
+      @include size(rem(135), rem(56));
+      position: relative;
+    }
+  }
+
+  .content{
+    margin: rem(57) auto 0 auto;
+    width: 87.2%;
+    opacity: 0.9;
+    overflow: hidden;
+    
+
+    .title{
+      font-size: clamp(rem(26), 6.25vw, rem(52));
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: calc(38 / 26);
+      text-align: center;
+      color: $white;
+
+      em {
+        font-style: normal;
+        color: $green;
+        font-weight: inherit;
+      }
+    }
+
+    .description{
+      margin-top: rem(16);
+      color: $light-blue;
+      font-size: clamp(rem(15), 2.34375vw, rem(18));
+      text-align: center;
+      line-height: calc(25 / 15);
+    }
+
+    --podcasts-size: calc(84vw / rem(536));
+    .root-component-podcasts{
+      margin-top: rem(33);
+      transform: scale(var(--podcasts-size));
+      
+    }
+
+  }
+}
+
+
+
+.root-component-podcasts {
+
+  height: rem(29); 
+  display: flex;
+  align-items: center;
+  min-width: rem(536);
+
+  .image-wrapper:nth-of-type(2){
+    margin-left: rem(40);
+  }
+
+  .image-wrapper:nth-of-type(2){
+    margin-left: rem(41);
+  }
+
+  .image-wrapper:last-of-type{
+    margin-left: rem(27);
+  }
+
+  
+}
