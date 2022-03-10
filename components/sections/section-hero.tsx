@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Podcasts from './../ui/podcasts';
+import Form from '../components/form';
+import Podcasts from '../components/podcasts';
 
 export default function SectionHero() {
   return (
@@ -27,17 +28,7 @@ export default function SectionHero() {
           Pocket Casts and more!
         </p>
         <Podcasts />
-        <form action="/" className="form">
-          <label htmlFor="section-hero-email-input">Email Address</label>
-          <input
-            type="email"
-            className="email-input"
-            id="section-hero-email-input"
-            required
-          />
-          <div className="message"></div>
-          <input type="submit" value="Request Access" />
-        </form>
+       <Form/>
       </div>
     </header>
   );
