@@ -5,7 +5,7 @@ import Podcasts from '../components/podcasts';
 
 export default function SectionHero() {
   return (
-    <header className="root-section-hero">     
+    <header className="root-section-hero">
       <div className="row-logo">
         <Link href="/">
           <a className="logo-link">
@@ -13,7 +13,6 @@ export default function SectionHero() {
               layout="fill"
               src="/assets/desktop/logo.svg"
               alt="Homepage"
-              priority
             />
           </a>
         </Link>
@@ -28,7 +27,7 @@ export default function SectionHero() {
           Pocket Casts and more!
         </p>
         <Podcasts />
-       <Form/>
+        <Form />
       </div>
     </header>
   );

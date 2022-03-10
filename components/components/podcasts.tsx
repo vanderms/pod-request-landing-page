@@ -9,8 +9,7 @@ export default function Podcasts() {
           width={96}
           height={29}
           alt="spotify"
-          layout='responsive'
-          priority
+          layout="responsive"
         />
       </div>
       <div className="apple-podcast">
@@ -19,8 +18,7 @@ export default function Podcasts() {
           width={78}
           height={29}
           alt="apple podcast"
-          layout='responsive'
-          priority
+          layout="responsive"
         />
       </div>
       <div className="google-podcast">
@@ -29,8 +27,7 @@ export default function Podcasts() {
           width={125}
           height={18}
           alt="google podcasts"
-          layout='responsive'
-          priority
+          layout="responsive"
         />
       </div>
       <div className="pocket-cast">
@@ -39,8 +36,7 @@ export default function Podcasts() {
           width={129}
           height={26}
           alt="pocket cast"
-          layout='responsive'
-          priority
+          layout="responsive"
         />
       </div>
     </div>
