@@ -2,17 +2,6 @@
 @use 'sass:math';
 
 .root-section-hero {
-  .bg-image {
-    background-image: url(/assets/mobile/image-host.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    inset: 0 0 0 0;
-    z-index: -1;
-    opacity: 0.1;
-  }
-
   .row-logo {
     margin-top: rem(62);
     display: flex;
@@ -22,6 +11,69 @@
       @include size(rem(135), rem(56));
       position: relative;
     }
+
+    @include media(tablet) {
+      margin-top: rem(50);
+      margin-left: math.percentage(39 / 768);
+      justify-content: flex-start;
+    }
+
+    @include media(laptop) {
+      margin-top: rem(102);
+      margin-left: math.percentage(165 / 1440);
+    }
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    background-image: url(/assets/mobile/image-host.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    inset: 0 0 0 0;
+    z-index: -1;
+    opacity: 0.1;
+
+    @include media(tablet) {
+      inset: unset;
+      top: 0;
+      right: 0;
+      width: math.percentage(491 / 768);
+      height: rem(767);
+      background-image: url(/assets/tablet/image-host.jpg);
+      opacity: 1;
+    }
+
+    @include media(laptop) {
+      top: rem(130);
+      width: math.percentage(888/1440);
+      height: rem(640);
+      background-image: url(/assets/desktop/image-host.jpg);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+
+    @include media(tablet) {
+      background-image: url(/assets/desktop/bg-pattern-dots.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      @include size(rem(232), rem(104));
+      margin-top: rem(153);
+      margin-left: rem(30);
+    }
+
+    @include media(laptop) {
+      margin-top: rem(-52);
+      margin-left: unset;
+      right: 0;
+    }
   }
 
   .content {
@@ -29,13 +81,34 @@
     width: 87.2%;
     opacity: 0.9;
 
+    @include media(tablet) {
+      margin: rem(152) 0 0 math.percentage(39 / 768);
+      padding-top: rem(93);
+      opacity: 1;
+      background-color: $dark-blueish-grey;
+      display: flex;
+      flex-direction: column;
+      width: math.percentage(635 / 768);
+      max-width: rem(723);
+    }
+
+    @include media(laptop) {
+      margin: rem(103) 0 0 math.percentage(165 / 1440);
+      padding-top: rem(88);
+    }
+
     .title {
       font-size: clamp(rem(26), 6.25vw, rem(52));
-      font-weight: 400;
+      font-weight: 300;
       text-transform: uppercase;
-      line-height: calc(38 / 26);
+      line-height: math.div(38, 26);
       text-align: center;
       color: $white;
+
+      @include media(tablet) {
+        text-align: left;
+        line-height: math.div(56, 48);
+      }
 
       em {
         font-style: normal;
@@ -49,7 +122,15 @@
       color: $light-blue;
       font-size: clamp(rem(15), 2.34375vw, rem(18));
       text-align: center;
-      line-height: calc(25 / 15);
+      line-height: math.div(25, 15);
+      font-weight: 300;
+
+      @include media(tablet) {
+        margin-top: rem(31);
+        text-align: left;
+        max-width: rem(445);
+        line-height: math.div(28, 18);
+      }
     }
   }
 }
@@ -62,13 +143,20 @@
   align-items: center;
   gap: rem(16);
 
+  @include media(tablet) {
+    order: 1;
+    margin-top: rem(64);
+    justify-content: flex-start;
+    gap: 0;
+  }
+
   .spotify {
     width: rem(56);
   }
 
   .apple-podcast {
     width: rem(45);
-    margin-left: rem(7);
+    margin-left: rem(40);
   }
 
   .google-podcast {
@@ -79,11 +167,40 @@
   .pocket-cast {
     width: rem(77);
   }
+
+  @include media(tablet) {
+    .spotify {
+      width: rem(96);
+    }
+
+    .apple-podcast {
+      width: rem(78);
+      margin-left: rem(40);
+    }
+
+    .google-podcast {
+      margin-left: rem(41);
+      width: rem(125);
+    }
+
+    .pocket-cast {
+      width: rem(129);
+      margin-left: rem(27);
+    }
+  }
 }
 
 .root-section-hero .form {
   margin-top: rem(48);
+  margin-bottom: rem(32);
   width: 100%;
+  position: relative;
+
+  @include media(tablet) {
+    margin-bottom: 0;
+    margin-top: rem(40);
+    max-width: rem(427);
+  }
 
   .input-container {
     width: 100%;
@@ -99,6 +216,10 @@
     font-size: rem(14);
     color: $white;
     font-weight: 700;
+
+    @include media(tablet) {
+      height: rem(56);
+    }
   }
 
   .label-email {
@@ -113,6 +234,10 @@
     font-weight: 700;
     font-size: rem(14);
     color: $white;
+
+    @include media(tablet) {
+      height: rem(56);
+    }
   }
 
   .input-email:placeholder-shown + .label-email {
@@ -133,12 +258,20 @@
 
   .input-submit {
     margin-top: rem(16);
-    margin-bottom: rem(32);
+    cursor: pointer;
     @include size(100%, rem(46));
     border: none;
     border-radius: 999px;
     background-color: $green;
     font-size: rem(14);
     font-weight: 700;
+
+    @include media(tablet) {
+      position: absolute;
+      top: rem(5);
+      right: rem(5);
+      margin-top: 0;
+      width: rem(162);
+    }
   }
 }

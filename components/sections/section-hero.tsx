@@ -5,8 +5,7 @@ import Podcasts from '../components/podcasts';
 
 export default function SectionHero() {
   return (
-    <header className="root-section-hero">
-      <div className="bg-image"></div>
+    <header className="root-section-hero">     
       <div className="row-logo">
         <Link href="/">
           <a className="logo-link">
