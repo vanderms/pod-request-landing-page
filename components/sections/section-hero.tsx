@@ -13,6 +13,7 @@ export default function SectionHero() {
               layout="fill"
               src="/assets/desktop/logo.svg"
               alt="Homepage"
+              priority
             />
           </a>
         </Link>
