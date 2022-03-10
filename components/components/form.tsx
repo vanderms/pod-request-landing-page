@@ -12,7 +12,9 @@ export default function Form() {
         <label className="label-email" htmlFor="section-hero-email-input">
           Email Address
         </label>
-        <div className="message hidden">Oops! Please check your email</div>
+        <div data-testid="custom-message" className="message hidden">
+          Oops! Please check your email
+        </div>
       </div>
       <input className="input-submit" type="submit" value="Request Access" />
     </form>
