@@ -250,7 +250,6 @@
   }
 
   .message {
-    color: $red;
     font-size: rem(12);
     font-weight: 700;
     margin-left: rem(32);
@@ -258,6 +257,14 @@
 
     &.hidden {
       display: none;
+    }
+
+    &.error {
+      color: $red;
+    }
+
+    &.success {
+      color: $green;
     }
   }
 
