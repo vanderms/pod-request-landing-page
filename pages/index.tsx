@@ -8,7 +8,9 @@ const Home: NextPage = () => {
       <Head>
         <title>Frontend Mentor | Pod request access landing page</title>
       </Head>
-      <SectionHero />
+      <main>
+        <SectionHero />
+      </main>
     </>
   );
 };
